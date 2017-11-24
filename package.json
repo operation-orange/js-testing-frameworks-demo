@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-core": "^6.26.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-redux": "^4.4.5",
@@ -10,17 +11,25 @@
     "react-scripts": "1.0.17"
   },
   "scripts": {
+    "postinstall": "node node_modules/protractor/bin/webdriver-manager update",
+    "eject": "react-scripts eject",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
+    "test:e2e": "protractor ./test/e2e/conf.js",
     "lint": "eslint ."
   },
   "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "cucumber": "^3.1.0",
+    "cucumber-html-reporter": "^3.0.4",
     "eslint": "^4.11.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.5.1"
+    "eslint-plugin-react": "^7.5.1",
+    "protractor": "^5.2.0",
+    "protractor-cucumber-framework": "^4.1.1"
   }
 }

@@ -5,7 +5,7 @@ import './App.css';
 const App = () => (
   <div className="App">
     <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
+      <img src={logo} className="App-logo" alt="logo" data-qa-id="main-logo" />
       <h1 className="App-title">Welcome to React</h1>
     </header>
     <p className="App-intro">
