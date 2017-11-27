@@ -32,6 +32,9 @@ exports.config = { // eslint-disable-line import/prefer-default-export
   ],
   capabilities: {
     browserName: 'chrome',
+    chromeOptions: {
+      args: ['--headless', '--disable-gpu', '--window-size=1000,800']
+    },
     shardTestFiles: true,
     maxInstances: 5
   },
