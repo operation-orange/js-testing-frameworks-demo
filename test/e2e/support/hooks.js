@@ -1,6 +1,11 @@
 import { defineSupportCode, Status } from 'cucumber';
 
-defineSupportCode(({ After }) => {
+defineSupportCode(({ Before, After }) => {
+  Before(function beforeHook(testCase) {
+    var world = this;
+    this.attach('Poo');
+  });
+
   After(function afterHook(testCase) {
     const world = this;
     if (testCase.result.status === Status.FAILED) {
@@ -9,6 +14,6 @@ defineSupportCode(({ After }) => {
       });
     }
 
-    return null;
+    return Promise.resolve();
   });
 });
