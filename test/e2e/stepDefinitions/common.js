@@ -13,7 +13,7 @@ defineSupportCode(function commonStepDefinitions({ Given }) {
   );
 
   Given(
-    'I([0-9]+) arrive at the {string} page',
+    'I arrive at the {string} page',
     function arriveAtAPage(pageName) {
       const page = this.getPage(pageName);
       return browser.wait(forUrlToBe(page.url()), 3000, `Timeout waiting for URL to be ${page.url()}`);
