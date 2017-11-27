@@ -37,6 +37,7 @@
     "prop-types": "^15.6.0",
     "protractor": "^5.2.0",
     "protractor-cucumber-framework": "^4.1.1",
-    "redux-devtools-extension": "^2.13.2"
+    "redux-devtools-extension": "^2.13.2",
+    "rmdir": "^1.2.0"
   }
 }

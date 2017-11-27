@@ -5,7 +5,7 @@ Feature: Brand Switching
 
     Scenario: No brand is selected
         Then the 'mainLogo' element is hidden
-        And the 'mainTitle' element contains the text "Welcome to the  Unbranded Home Page"
+        And the 'mainTitle' element contains the text "Welcome to the Unbranded Home Page"
 
     Scenario: Pick a brand - Topshop
         And I click the 'topshop' button

@@ -22,8 +22,7 @@ export const MainHeader = ({ brand }) => (
       />
     )}
     <h1 className="App-MainHeader-title" data-qa-id="main-title">
-      Welcome to the {brand}&nbsp;
-      {brand || 'Unbranded '}
+      Welcome to the {brand || 'Unbranded'}&nbsp;
       <Route path="/" exact component={() => 'Home Page'} />
       <Route path="/about" exact component={() => 'About Page'} />
       <Route path="/contact" exact component={() => 'Contact Page'} />
