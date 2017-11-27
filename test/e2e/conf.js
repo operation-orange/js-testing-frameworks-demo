@@ -10,25 +10,16 @@ const screenshotPath = `${e2ePath}/screenshots`;
 function createOrCleanTestOutputDir() {
   try {
     fs.statSync(testOutputPath);
-    try {
-      fs.statSync(e2ePath);
-    } catch (e1) {
-      fs.mkdirSync(e2ePath);
-    }
   } catch (e2) {
     fs.mkdirSync(testOutputPath);
-    fs.mkdirSync(e2ePath);
   }
 
   try {
-    fs.statSync(screenshotPath);
-    rmdir(screenshotPath);
-  } catch (e) { /* do nothing */ }
-
-  try {
-    fs.statSync(`${e2ePath}/report.html.json`);
-    fs.unlinkSync(`${e2ePath}/report.html.json`);
-  } catch (e) { /* do nothing */ }
+    fs.statSync(e2ePath);
+    rmdir(e2ePath, () => fs.mkdirSync(e2ePath));
+  } catch (e) {
+    fs.mkdirSync(e2ePath);
+  }
 }
 
 exports.config = { // eslint-disable-line import/prefer-default-export
@@ -40,7 +31,9 @@ exports.config = { // eslint-disable-line import/prefer-default-export
     'features/**/*.feature'
   ],
   capabilities: {
-    browserName: 'chrome'
+    browserName: 'chrome',
+    shardTestFiles: true,
+    maxInstances: 5
   },
   cucumberOpts: {
     require: [
@@ -53,11 +46,13 @@ exports.config = { // eslint-disable-line import/prefer-default-export
     profile: false,
     'no-source': true
   },
-  onPrepare: () => {
-    browser.waitForAngularEnabled(false);
+  beforeLaunch: () => {
     createOrCleanTestOutputDir();
   },
-  onComplete: () => {
+  onPrepare: () => {
+    browser.waitForAngularEnabled(false);
+  },
+  afterLaunch: () => {
     const options = {
       theme: 'bootstrap',
       jsonDir: e2ePath,
