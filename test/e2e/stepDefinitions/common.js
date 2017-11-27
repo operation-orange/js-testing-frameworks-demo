@@ -4,7 +4,7 @@ import { forUrlToBe } from './helpers';
 // eslint-disable-next-line prefer-arrow-callback
 defineSupportCode(function commonStepDefinitions({ Given }) {
   Given(
-    'I go the the {string} page',
+    'I go to the {string} page',
     function goToAPage(pageName) {
       const page = this.getPage(pageName);
       browser.get(page.url());
@@ -67,7 +67,7 @@ defineSupportCode(function commonStepDefinitions({ Given }) {
   );
 
   Given(
-    'I click the {string} (button|link|radio button|checkbox)',
+    /^I click the ['"](.+)['"] (button|link|radio button|checkbox)$/,
     function clickX(selectorName, type) { // eslint-disable-line no-unused-vars
       return this.getCurrentPage().getPresentElement(selectorName)
         .then(element => element.click());
@@ -75,13 +75,13 @@ defineSupportCode(function commonStepDefinitions({ Given }) {
   );
 
   Given(
-    'the {string} ([^ ]+) attribute is {string}',
+    /^the ['"](.+)['"] ([^ ]+) attribute is ['"](.+)['"]$/,
     function xAttributeIsYValue(selectorName, attributeName, attributeValue) {
       const attribute = this.getCurrentPage().getPresentElement(selectorName)
         .then(element => element.getAttribute(attributeName));
 
       const prefixedUrl = attributeName.match(/(src|href)/) && attributeValue.match(/^\//) ?
-        `${attributeValue}` : null;
+        `${browser.baseUrl}${attributeValue}` : null;
 
       return this.expect(attribute).to.eventually.equal(prefixedUrl || attributeValue);
     }

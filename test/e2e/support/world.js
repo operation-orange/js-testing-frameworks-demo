@@ -3,8 +3,8 @@ import chai from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 import { setWorldConstructor } from 'cucumber';
 
-const pagesPath = path.resolve(__dirname, '../../pages');
-const componentsPath = path.resolve(__dirname, '../../components');
+const pagesPath = path.resolve(__dirname, '../pages');
+const componentsPath = path.resolve(__dirname, '../components');
 const pages = {};
 const components = {};
 

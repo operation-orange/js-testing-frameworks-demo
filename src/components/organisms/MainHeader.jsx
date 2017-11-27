@@ -2,23 +2,28 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import topshopLogo from '../../assets/images/topshop-logo.gif';
-import asosLogo from '../../assets/images/asos-logo.png';
-import nextLogo from '../../assets/images/next-logo.png';
 import './MainHeader.css';
 import NavLink from '../atoms/NavLink';
 
 const logos = {
-  Topshop: topshopLogo,
-  ASOS: asosLogo,
-  Next: nextLogo
+  Topshop: '/images/topshop-logo.gif',
+  ASOS: '/images/asos-logo.png',
+  Next: '/images/next-logo.png'
 };
 
 export const MainHeader = ({ brand }) => (
   <header className="App-MainHeader-header">
-    <img src={logos[brand]} className={classNames('App-MainHeader-logo', `App-MainHeader-logo-${brand}`)} alt="logo" data-qa-id="main-logo" />
-    <h1 className="App-MainHeader-title">
+    {brand && (
+      <img
+        src={logos[brand]}
+        className={classNames('App-MainHeader-logo', `App-MainHeader-logo-${brand}`)}
+        alt="logo"
+        data-qa-id="main-logo"
+      />
+    )}
+    <h1 className="App-MainHeader-title" data-qa-id="main-title">
       Welcome to the {brand}&nbsp;
+      {brand || 'Unbranded '}
       <Route path="/" exact component={() => 'Home Page'} />
       <Route path="/about" exact component={() => 'About Page'} />
       <Route path="/contact" exact component={() => 'Contact Page'} />

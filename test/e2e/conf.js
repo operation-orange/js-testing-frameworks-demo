@@ -32,7 +32,7 @@ exports.config = { // eslint-disable-line import/prefer-default-export
   },
   cucumberOpts: {
     require: [
-      'features/support/world.js',
+      'support/world.js',
       'stepDefinitions/*.js'
     ],
     // 'tags': '@current',

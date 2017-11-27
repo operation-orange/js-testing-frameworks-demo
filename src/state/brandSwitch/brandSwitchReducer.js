@@ -1,7 +1,7 @@
 import { SWITCH_BRAND } from './branchSwitchActions';
 
 const initialState = {
-  current: 'Topshop'
+  current: ''
 };
 
 const brandSwitchReducer = (state = initialState, action) => {

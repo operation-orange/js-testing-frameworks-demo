@@ -5,7 +5,7 @@ import Button from '../../components/atoms/Button';
 
 export const Home = ({ switchBrandAction }) => (
   <div>
-    Switch brand:&nbsp;
+    Select brand:&nbsp;
     <Button onClick={() => switchBrandAction('Topshop')} qaId="topshop-button">Topshop</Button>
     <Button onClick={() => switchBrandAction('ASOS')} qaId="asos-button">ASOS</Button>
     <Button onClick={() => switchBrandAction('Next')} qaId="next-button">Next</Button>
