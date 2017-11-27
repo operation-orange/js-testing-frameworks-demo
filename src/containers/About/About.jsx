@@ -1,7 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import connectState from './About.state';
 
-const About = () => (
-  <div>The About Page</div>
+export const About = ({ brand }) => (
+  <div>The {brand} About Page</div>
 );
 
-export default About;
+About.propTypes = {
+  brand: PropTypes.string.isRequired
+};
+
+export default connectState(About);

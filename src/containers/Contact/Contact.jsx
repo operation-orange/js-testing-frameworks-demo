@@ -1,7 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import connectState from './Contact.state';
 
-const Contact = () => (
-  <div>The Contact Page</div>
+export const Contact = ({ brand }) => (
+  <div>The {brand} Contact Page</div>
 );
 
-export default Contact;
+Contact.propTypes = {
+  brand: PropTypes.string.isRequired
+};
+
+export default connectState(Contact);

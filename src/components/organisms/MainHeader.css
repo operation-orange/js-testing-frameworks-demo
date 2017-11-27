@@ -1,0 +1,36 @@
+.App-MainHeader-header {
+  background-color: #222;
+  padding: 20px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.App-MainHeader-nav a {
+  display: inline-block;
+  padding: 2px 5px;
+  color: #BBB;
+  font-size: 1.1em;
+}
+
+.App-MainHeader-nav a.active {
+  color: #FFF;
+}
+
+.App-MainHeader-title {
+  font-size: 1.5em;
+}
+
+.App-MainHeader-logo-Topshop {
+  background-color: #FFF;
+  padding: 5px;
+}
+
+.App-MainHeader-logo-ASOS {
+  background-color: #FFF;
+  padding: 5px;
+}
+
+.App-MainHeader-logo-Next {
+  background-color: #000;
+  padding: 5px;
+}
