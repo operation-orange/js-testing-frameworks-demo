@@ -4,7 +4,11 @@ import { withRouter } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux';
 import { Provider } from 'react-redux';
 import store, { history } from './state/store';
-import './index.css';
+import './assets/css/bootstrap-reboot.css';
+import './assets/css/global.css';
+import './assets/css/topshop.css';
+import './assets/css/asos.css';
+import './assets/css/next.css';
 import App from './containers/App';
 
 ReactDOM.render(

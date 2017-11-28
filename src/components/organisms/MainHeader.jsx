@@ -6,30 +6,28 @@ import './MainHeader.css';
 import NavLink from '../atoms/NavLink';
 
 const logos = {
-  Topshop: '/images/topshop-logo.gif',
-  ASOS: '/images/asos-logo.png',
-  Next: '/images/next-logo.png'
+  topshop: '/images/topshop-logo.gif',
+  asos: '/images/asos-logo.png',
+  next: '/images/next-logo.png'
 };
 
 export const MainHeader = ({ brand }) => (
-  <header className="App-MainHeader-header">
+  <header className="MainHeader__header">
     {brand && (
       <img
-        src={logos[brand]}
-        className={classNames('App-MainHeader-logo', `App-MainHeader-logo-${brand}`)}
+        src={logos[brand.toLowerCase()]}
+        className={classNames('MainHeader__logo', `MainHeader__logo_${brand.toLowerCase()}`)}
         alt="logo"
         data-qa-id="main-logo"
       />
     )}
-    <h1 className="App-MainHeader-title" data-qa-id="main-title">
+    <h1 className="MainHeader__title" data-qa-id="main-title">
       Welcome to the {brand || 'Unbranded'}&nbsp;
       <Route path="/" exact component={() => 'Home Page'} />
-      <Route path="/about" exact component={() => 'About Page'} />
       <Route path="/contact" exact component={() => 'Contact Page'} />
     </h1>
-    <nav className="App-MainHeader-nav">
+    <nav className="MainHeader__nav">
       <NavLink to="/">Home</NavLink>
-      <NavLink to="/about">About</NavLink>
       <NavLink to="/contact">Contact</NavLink>
     </nav>
   </header>
