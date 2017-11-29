@@ -1,11 +1,6 @@
 import { defineSupportCode, Status } from 'cucumber';
 
-defineSupportCode(({ Before, After }) => {
-  Before(function beforeHook(testCase) {
-    var world = this;
-    this.attach('Poo');
-  });
-
+defineSupportCode(({ After }) => {
   After(function afterHook(testCase) {
     const world = this;
     if (testCase.result.status === Status.FAILED) {

@@ -6,7 +6,7 @@ import Button from '../../components/atoms/Button';
 export const Home = ({ switchBrandAction }) => (
   <div>
     <p>
-      A simple React application (based on <a href="https://github.com/facebookincubator/create-react-app" relx="noopener noreferrer" target="_blank">Create React App</a>)
+      A simple React application (based on <a href="https://github.com/facebookincubator/create-react-app" rel="noopener noreferrer" target="_blank">Create React App</a>)
     </p>
     Select brand:&nbsp;
     <Button onClick={() => switchBrandAction('Topshop')} qaId="topshop-button">Topshop</Button>
