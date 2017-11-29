@@ -5,9 +5,10 @@ const TextInputField = ({
   children,
   input,
   label,
+  qaId,
   meta: { touched, error, warning }
 }) => {
-  const clonedChild = React.cloneElement(children, { id: input.name, ...input });
+  const clonedChild = React.cloneElement(children, { id: input.name, 'data-qa-id': qaId, ...input });
 
   return (
     <div>
@@ -15,8 +16,8 @@ const TextInputField = ({
       <div>
         {clonedChild}
         {touched &&
-          ((error && <span>{error}</span>) ||
-            (warning && <span>{warning}</span>))}
+          ((error && <div>{error}</div>) ||
+            (warning && <div>{warning}</div>))}
       </div>
     </div>
   );
@@ -24,8 +25,20 @@ const TextInputField = ({
 
 TextInputField.propTypes = {
   children: PropTypes.element.isRequired,
-  input: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  input: PropTypes.shape({
+    name: PropTypes.string,
+    onBlur: PropTypes.func,
+    onChange: PropTypes.func,
+    onDragStart: PropTypes.func,
+    onDrop: PropTypes.func,
+    onFocus: PropTypes.func,
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ])
+  }),
   label: PropTypes.string,
+  qaId: PropTypes.string,
   meta: PropTypes.shape({
     touched: PropTypes.bool,
     error: PropTypes.string,
@@ -34,7 +47,17 @@ TextInputField.propTypes = {
 };
 
 TextInputField.defaultProps = {
+  input: {
+    name: null,
+    onBlur: null,
+    onChange: null,
+    onDragStart: null,
+    onDrop: null,
+    onFocus: null,
+    value: null
+  },
   label: '',
+  qaId: null,
   meta: {
     touched: false,
     error: '',
