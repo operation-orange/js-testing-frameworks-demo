@@ -1,9 +1,10 @@
 import React from 'react';
 import FormField from './FormField';
+import './TextAreaField.css';
 
 const TextAreaField = props => (
   <FormField {...props}>
-    <textarea className="FormField__textarea" />
+    <textarea className="TextAreaField" />
   </FormField>
 );
 

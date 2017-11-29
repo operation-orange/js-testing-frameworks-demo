@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
 import { required, email } from 'redux-form-validators';
+import './ContactForm.css';
 import InputField from '../../components/molecules/InputField';
 import TextAreaField from '../../components/molecules/TextAreaField';
 import Button from '../../components/atoms/Button';
 
 export const ContactForm = ({ handleSubmit }) => (
-  <form onSubmit={handleSubmit} noValidate>
+  <form className="ContactForm" onSubmit={handleSubmit} noValidate>
     <Field
       label="First Name"
       name="firstName"

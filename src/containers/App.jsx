@@ -14,7 +14,7 @@ export const App = ({ brand }) => (
   })}
   >
     <MainHeader brand={brand} />
-    <div>
+    <div className="App__content">
       {routes}
     </div>
   </div>

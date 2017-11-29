@@ -20,12 +20,12 @@ const FormField = ({
 
   return (
     <div className={classNames('FormField', className)}>
-      <label className="FormField__label" htmlFor={input.name}>{label}</label>
+      <label className="FormField__label" htmlFor={input.name} data-qa-id={`${qaId}-label`}>{label}</label>
       <div>
         {clonedChild}
         {touched &&
-          ((error && <div className="FormField__error">{error}</div>) ||
-            (warning && <div>{warning}</div>))}
+          ((error && <div className="FormField__error" data-qa-id={`${qaId}-error`}>{error}</div>) ||
+            (warning && <div className="FormField__warning" data-qa-id={`${qaId}-warning`}>{warning}</div>))}
       </div>
     </div>
   );

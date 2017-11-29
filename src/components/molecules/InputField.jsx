@@ -4,7 +4,7 @@ import FormField from './FormField';
 
 const InputField = ({ type, ...otherProps }) => (
   <FormField {...otherProps}>
-    <input type={type} className="FormField__input" />
+    <input type={type} className="InputField" />
   </FormField>
 );
 
