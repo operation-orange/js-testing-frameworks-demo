@@ -1,13 +1,12 @@
-
 import { connect } from 'react-redux';
-import { switchBrandAction } from '../../state/brandSwitch/branchSwitchActions';
+import { push } from 'react-router-redux';
 
 export const mapStateToProps = state => ({
   brand: state.brand.current
 });
 
-export const mapDispatchToProps = ({
-  switchBrandAction
-});
+export const mapActionsToProps = {
+  push
+};
 
-export default connect(mapStateToProps, mapDispatchToProps);
+export default connect(mapStateToProps, mapActionsToProps);
