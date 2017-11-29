@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
 import { required, email } from 'redux-form-validators';
-import InputField from '../../components/atoms/InputField';
-import TextAreaField from '../../components/atoms/TextAreaField';
+import InputField from '../../components/molecules/InputField';
+import TextAreaField from '../../components/molecules/TextAreaField';
 import Button from '../../components/atoms/Button';
 
 export const ContactForm = ({ handleSubmit }) => (
