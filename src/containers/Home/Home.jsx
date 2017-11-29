@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import connectState from './Home.state';
 import Button from '../../components/atoms/Button';
 
@@ -12,13 +13,14 @@ export const Home = ({ push }) => (
     <p>
       This site demonstrates the concept of testing a single platform that supports multiple brands
       (e.g. an ecommerce platform). Chosen because, even though the switch between each brand may
-      result in similar sites, from a testing perspective each brand should be tested as if it is
-      completely standalone. Each with its own distinct set of tests.
+      result in functionally and visually similar websites, from a testing perspective each brand
+      site should be tested as if it is completely standalone. Each with its own distinct set of
+      tests.
     </p>
     <p>
-      Because there will be many similar, but slightly varying tests between each brand,
-      it better highlights the code reusability of how the E2E and layout testing frameworks
-      have been implemented.
+      Because there will be many similar, only slightly varying tests between each brand,
+      this example better highlights the code reusability of how the E2E and layout testing
+      frameworks have been implemented.
     </p>
     Select brand:&nbsp;
     <Button onClick={() => push('/?brand=topshop')} qaId="topshop-button">Topshop</Button>
@@ -26,5 +28,9 @@ export const Home = ({ push }) => (
     <Button onClick={() => push('/?brand=next')} qaId="next-button">Next</Button>
   </div>
 );
+
+Home.propTypes = {
+  push: PropTypes.func.isRequired
+};
 
 export default connectState(Home);
