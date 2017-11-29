@@ -1,12 +1,8 @@
 import { connect } from 'react-redux';
-import { showContactFormDataAction } from '../../state/contactForm/contactFormActions';
 
 export const mapStateToProps = state => ({
-  brand: state.brand.current
+  brand: state.brand.current,
+  contactFormSubmitted: state.form.contact && state.form.contact.submitSucceeded
 });
 
-export const mapDispatchToProps = ({
-  showContactFormDataAction
-});
-
-export default connect(mapStateToProps, mapDispatchToProps);
+export default connect(mapStateToProps);
