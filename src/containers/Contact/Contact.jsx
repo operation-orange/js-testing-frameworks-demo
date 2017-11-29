@@ -5,7 +5,7 @@ import ContactForm from './ContactForm';
 
 export const Contact = ({ brand, contactFormSubmitted }) => (
   <div>
-    <ContactForm />
+    <ContactForm onSubmit={() => {}} />
     {contactFormSubmitted && <div>{brand || 'Unbranded'} contact form successfully submitted!</div>}
   </div>
 );

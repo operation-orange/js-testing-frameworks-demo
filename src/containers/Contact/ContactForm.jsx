@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
 import { required, email } from 'redux-form-validators';
 import InputField from '../../components/atoms/InputField';
+import TextAreaField from '../../components/atoms/TextAreaField';
 import Button from '../../components/atoms/Button';
 
 export const ContactForm = ({ handleSubmit }) => (
@@ -31,7 +32,14 @@ export const ContactForm = ({ handleSubmit }) => (
       validate={[required({ msg: 'Please provide your email' }), email({ msg: 'Invalid email' })]}
       qaId="email-field"
     />
-    <Button type="submit">Submit</Button>
+    <Field
+      label="Message"
+      name="message"
+      component={TextAreaField}
+      validate={[required({ msg: 'Please provide your message' })]}
+      qaId="message-field"
+    />
+    <Button type="submit" qaId="submit-button">Submit</Button>
   </form>
 );
 

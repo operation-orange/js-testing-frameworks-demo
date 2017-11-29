@@ -1,30 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import './FormField.css';
 
-const TextInputField = ({
+const FormField = ({
   children,
+  className,
   input,
   label,
   qaId,
   meta: { touched, error, warning }
 }) => {
-  const clonedChild = React.cloneElement(children, { id: input.name, 'data-qa-id': qaId, ...input });
+  const clonedChild = React.cloneElement(children, {
+    id: input.name,
+    className: classNames('FormField__field', children.props.className),
+    'data-qa-id': qaId,
+    ...input
+  });
 
   return (
-    <div>
-      <label htmlFor={input.name}>{label}</label>
+    <div className={classNames('FormField', className)}>
+      <label className="FormField__label" htmlFor={input.name}>{label}</label>
       <div>
         {clonedChild}
         {touched &&
-          ((error && <div>{error}</div>) ||
+          ((error && <div className="FormField__error">{error}</div>) ||
             (warning && <div>{warning}</div>))}
       </div>
     </div>
   );
 };
 
-TextInputField.propTypes = {
+FormField.propTypes = {
   children: PropTypes.element.isRequired,
+  className: PropTypes.string,
   input: PropTypes.shape({
     name: PropTypes.string,
     onBlur: PropTypes.func,
@@ -46,7 +55,8 @@ TextInputField.propTypes = {
   })
 };
 
-TextInputField.defaultProps = {
+FormField.defaultProps = {
+  className: null,
   input: {
     name: null,
     onBlur: null,
@@ -65,4 +75,4 @@ TextInputField.defaultProps = {
   }
 };
 
-export default TextInputField;
+export default FormField;

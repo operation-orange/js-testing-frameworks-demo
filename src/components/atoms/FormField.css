@@ -1,0 +1,7 @@
+.FormField__label {
+  font-weight: bold;
+}
+
+.FormField__error {
+  color: #DD0000;
+}
