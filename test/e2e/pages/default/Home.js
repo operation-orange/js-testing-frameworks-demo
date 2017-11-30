@@ -1,5 +1,5 @@
-import Page from '../Page';
-import MainHeader from '../components/MainHeader';
+import Page from '../../Page';
+import MainHeader from '../../components/MainHeader';
 
 export default class DefaultHome extends Page {
   constructor(world) {

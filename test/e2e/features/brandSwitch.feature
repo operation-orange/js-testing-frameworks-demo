@@ -1,7 +1,7 @@
 Feature: Brand Switching
 
     Background:
-        Given I go to the 'Default Home' page
+        Given I go to the 'Default - Home' page
 
     Scenario: No brand is selected
         Then the 'mainLogo' element is hidden
@@ -9,15 +9,18 @@ Feature: Brand Switching
 
     Scenario: Pick a brand - Topshop
         And I click the 'topshop' button
+        Then I arrive at the 'Topshop - Home' page
         And the 'mainLogo' element is visible
         And the 'mainLogo' src attribute is "/images/topshop-logo.gif"
 
     Scenario: Pick a brand - ASOS
         And I click the 'asos' button
+        Then I arrive at the 'ASOS - Home' page
         And the 'mainLogo' element is visible
         And the 'mainLogo' src attribute is "/images/asos-logo.png"
 
     Scenario: Pick a brand - Next
         And I click the 'next' button
+        Then I arrive at the 'Next - Home' page
         And the 'mainLogo' element is visible
         And the 'mainLogo' src attribute is "/images/next-logo.png"
