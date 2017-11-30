@@ -1,5 +1,6 @@
 require('babel-core/register');
 const fs = require('fs');
+const rmdir = require('rmdir');
 
 const testOutputPath = `${process.cwd()}/testOutput`;
 const e2ePath = `${testOutputPath}/e2e`;
@@ -22,7 +23,7 @@ try {
   fs.mkdirSync(e2ePath);
 }
 
-exports.config = { // eslint-disable-line import/prefer-default-export
+exports.config = {
   directConnect: true,
   framework: 'custom',
   frameworkPath: require.resolve('protractor-cucumber-framework'),
@@ -34,12 +35,12 @@ exports.config = { // eslint-disable-line import/prefer-default-export
     browserName: 'chrome',
     chromeOptions: chromeArgs,
     shardTestFiles: true,
-    maxInstances: 5
+    maxInstances: 10
   }, {
     browserName: 'firefox',
     'moz:firefoxOptions': firefoxArgs,
     shardTestFiles: true,
-    maxInstances: 5
+    maxInstances: 10
   }],
   cucumberOpts: {
     require: [
@@ -47,10 +48,16 @@ exports.config = { // eslint-disable-line import/prefer-default-export
       'support/hooks.js',
       'stepDefinitions/*.js'
     ],
-    // 'tags': '@current',
+    // tags: '@current',
     format: `json:${e2ePath}/e2e-report.json`,
     profile: false,
     'no-source': true
+  },
+  beforeLaunch: () => {
+    try {
+      fs.statSync(`${e2ePath}/json-output-folder`);
+      rmdir(`${e2ePath}/json-output-folder`);
+    } catch (e2) { /* do nothing */ }
   },
   onPrepare: () => {
     browser.waitForAngularEnabled(false);

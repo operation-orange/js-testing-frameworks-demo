@@ -49,7 +49,7 @@ Given(
 );
 
 Given(
-  /^the ['"](.+)['"] element contains the text ['"](.+)['"]$/,
+  /^the ['"](.+)['"] element contains the text ['"](.*)['"]$/,
   function xElementComtainsYText(selectorName, headerText) {
     return this.getCurrentPage().getPresentElement(selectorName)
       .then(element => this.expect(element.getText()).to.eventually.equal(headerText));
@@ -59,7 +59,7 @@ Given(
 Given(
   /^I enter ['"](.*)['"] into the ['"](.+)['"] field$/,
   function enterXintoYfield(text, fieldName) {
-    return this.getCurrentcommonStepDefinitionsPage().getPresentElement(fieldName)
+    return this.getCurrentPage().getPresentElement(fieldName)
       .then(element => element.sendKeys(text));
   }
 );

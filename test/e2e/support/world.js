@@ -4,8 +4,6 @@ import chaiAsPromised from 'chai-as-promised';
 import { setWorldConstructor } from 'cucumber';
 
 const pagesPath = path.resolve(__dirname, '../pages');
-const componentsPath = path.resolve(__dirname, '../components');
-const pages = {};
 const components = {};
 
 chai.use(chaiAsPromised);
@@ -28,30 +26,9 @@ function World({ attach, parameters }) {
   this.expect = chai.expect;
   this.EC = protractor.ExpectedConditions;
 
-  this.pageCache = {};
   this.componentCache = {};
 
-  this.getComponent = (name) => {
-    name = name.replace(/ /g, ''); // eslint-disable-line no-param-reassign
-
-    if (!components[name]) {
-      try {
-        const module = require(path.resolve(componentsPath, name)); // eslint-disable-line import/no-dynamic-require, global-require, max-len
-        components[name] = module.default;
-      } catch (err) {
-        throw new Error(`Component object ${name} not found at ${componentsPath}/${name}.js`);
-      }
-    }
-
-    if (!this.componentCache[name]) {
-      const component = new components[name](this);
-      this.componentCache[name] = component;
-    }
-
-    return this.componentCache[name];
-  };
-
-  this.getPage = (name) => {
+  this.getComponent = (name, type = 'component') => {
     const classPath = name.split(' - ')
       .map((w, i, nameArray) => {
         if (i !== nameArray.length - 1) {
@@ -62,22 +39,27 @@ function World({ attach, parameters }) {
       })
       .join('/');
 
-    if (!pages[classPath]) {
+    if (!components[classPath]) {
       try {
         const module = require(path.resolve(pagesPath, classPath)); // eslint-disable-line import/no-dynamic-require, global-require, max-len
-        pages[classPath] = module.default;
+        components[classPath] = module.default;
       } catch (err) {
-        throw new Error(`Page object ${classPath} not found at ${pagesPath}/${classPath}.js`);
+        throw new Error(`${toTitleCase(type)} object ${classPath} not found at ${pagesPath}/${classPath}.js`);
       }
     }
 
-    if (!this.pageCache[classPath]) {
-      const page = new pages[classPath](this);
-      this.pageCache[classPath] = page;
+    if (!this.componentCache[classPath]) {
+      const component = new components[classPath](this);
+      this.componentCache[classPath] = component;
     }
 
-    this.currentPage = this.pageCache[classPath];
-    return this.pageCache[classPath];
+    return this.componentCache[classPath];
+  };
+
+  this.getPage = (name) => {
+    const page = this.getComponent(name, 'page');
+    this.currentPage = page;
+    return page;
   };
 
   this.setCurrentPage = this.getPage;

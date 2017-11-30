@@ -10,20 +10,12 @@ import Button from '../../components/atoms/Button';
 export const ContactForm = ({ handleSubmit }) => (
   <form className="ContactForm" onSubmit={handleSubmit} noValidate>
     <Field
-      label="First Name"
-      name="firstName"
+      label="Name"
+      name="name"
       component={InputField}
       type="text"
-      validate={[required({ msg: 'Please provide your first name' })]}
-      qaId="first-name-field"
-    />
-    <Field
-      label="Last Name"
-      name="lastName"
-      component={InputField}
-      type="text"
-      validate={[required({ msg: 'Please provide your last name' })]}
-      qaId="last-name-field"
+      validate={[required({ msg: 'Please provide your name' })]}
+      qaId="name-field"
     />
     <Field
       label="Email"

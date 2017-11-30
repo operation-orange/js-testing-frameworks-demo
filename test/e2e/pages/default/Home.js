@@ -1,7 +1,7 @@
 import Page from '../../Page';
-import MainHeader from '../../components/MainHeader';
+import MainHeader from '../components/MainHeader';
 
-export default class DefaultHome extends Page {
+export default class Home extends Page {
   constructor(world) {
     super(world, '/', {
       topshop: '[data-qa-id=topshop-button]',
