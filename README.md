@@ -13,8 +13,8 @@ Protractor is the e2e test runner and Cucumber.js the test framework (much like 
 
 #### Running e2e Tests
 You first have to run the application (above), then:
-* `npm run test:e2e` to run tests in GUI mode for both Chrome and Firefox.
-* `npm run test:e2e:headless` to run the same but in headless mode (as they would be in the CI pipeline).
+* `npm run test:e2e` to run tests in GUI mode just for Chrome (as a development visual reference).
+* `npm run test:e2e:headless` to run both Chrome and Firefox in headless mode with sharding (as they would be in the CI pipeline).
 
 The e2e tests live under `./test/e2e` and the resulting e2e HTML report will be generated at `./testOutput/e2e/report/index.html`.
 
