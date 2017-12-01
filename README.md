@@ -29,6 +29,7 @@ The Cucumber tests executed live under `./test/e2e/features`, the code that back
   * 'Sharding' is supported to run multiple WebDriverJs instances at once, taking advantage of multi-core systems and improving performance of running tests. The more tests, the more significant the performance gain.
 * Little coding is required to create tests as this implementation of Cucumber.js focuses on heavily on code reusability. Writing a test usually consists of creating human readable feature files (an example [feature](https://github.com/operation-orange/js-testing-frameworks-demo/blob/master/test/e2e/features/default/contactPage/contactForm.feature) file) and simple JS page objects (which will be shared by multiple feature files), representing the page URL and elements you wish to test (an example [page object](https://github.com/operation-orange/js-testing-frameworks-demo/blob/master/test/e2e/pages/default/Contact.js)).
 * Most of the horse-work is done by a small number of reusuable [step definitions](https://github.com/operation-orange/js-testing-frameworks-demo/blob/master/test/e2e/stepDefinitions/common.js) and a Page Object framework which abstracts over interacting with page elements (see the [World](https://github.com/operation-orange/js-testing-frameworks-demo/blob/master/test/e2e/support/world.js) and [Component](https://github.com/operation-orange/js-testing-frameworks-demo/blob/master/test/e2e/Component.js) classes).
+* Informative error messaging and screenshots embedded into the report (break a test to see).
 
 ### Galen Layout Testing
 _TO DO_
