@@ -24,8 +24,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "test:e2e": "protractor ./test/e2e/conf.js",
-    "test:e2e:headless": "protractor ./test/e2e/conf.js --headless",
+    "test:e2e": "protractor ./test/e2e/protractor.conf.js",
+    "test:e2e:headless": "protractor ./test/e2e/protractor.conf.js --headless",
+    "test:layout": "galen test ./test/layout/suites/home.test.js --htmlreport ./testOutput/layout --config \"./test/layout/galen.config\"",
+    "galen": "galen",
     "lint": "eslint --ext .jsx --ext .js ."
   },
   "devDependencies": {
@@ -37,6 +39,7 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.5.1",
+    "galenframework-cli": "^2.3.5",
     "prop-types": "^15.6.0",
     "protractor": "^5.2.0",
     "protractor-cucumber-framework": "^4.1.1",
