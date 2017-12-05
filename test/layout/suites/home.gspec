@@ -3,7 +3,20 @@
     logo          [data-qa-id=main-logo]
 
 = Header =
-    logo:
-        width 238px
-        centered horizontally inside mainHeader
-        inside mainHeader 20px top
+    @on desktop
+        logo:
+            width 238px
+            centered horizontally inside mainHeader
+            inside mainHeader 20px top
+
+    @on tablet
+        logo:
+            width 238px
+            centered horizontally inside mainHeader
+            inside mainHeader 20px top
+
+    @on mobile
+        logo:
+            width 238px
+            centered horizontally inside mainHeader
+            inside mainHeader 20px top
