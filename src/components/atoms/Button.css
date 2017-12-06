@@ -1,3 +1,10 @@
 .Button {
   cursor: pointer;
 }
+
+@media (min-width: 460px) {
+  .Button {
+    width: auto;
+    display: inline-block;
+  }
+}

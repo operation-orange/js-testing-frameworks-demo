@@ -12,6 +12,10 @@
   font-size: 1.1em;
 }
 
+.MainHeader__logo {
+  width: 100%;
+}
+
 .MainHeader__nav a.active {
   color: #FFF;
 }
@@ -33,4 +37,10 @@
 .MainHeader__logo_next {
   background-color: #000;
   padding: 10px;
+}
+
+@media (min-width: 460px) {
+  .MainHeader__logo {
+    width: auto;
+  }
 }

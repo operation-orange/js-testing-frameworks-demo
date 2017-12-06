@@ -4,19 +4,19 @@ const specPath = './test/layout/specs';
 const devices = { // eslint-disable-line no-unused-vars
   desktopChrome: {
     deviceName: 'desktop chrome',
-    size: '1100x800',
+    size: '1300x800',
     tags: ['desktop'],
     browser: 'chrome'
   },
   tabletChrome: {
     deviceName: 'tablet chrome',
-    size: '601x800',
+    size: '959x800',
     tags: ['tablet'],
     browser: 'chrome'
   },
   mobileChrome: {
     deviceName: 'mobile chrome',
-    size: '450x800',
+    size: '459x800',
     tags: ['mobile'],
     browser: 'chrome'
   }

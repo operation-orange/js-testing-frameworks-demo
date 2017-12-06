@@ -1,0 +1,8 @@
+button, input, textarea {
+  width: 100%;
+  display: block;
+}
+
+textarea {
+  min-height: 100px;
+}

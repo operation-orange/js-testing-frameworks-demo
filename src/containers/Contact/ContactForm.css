@@ -1,3 +1,9 @@
 .ContactForm {
 
 }
+
+@media (min-width: 460px) {
+  .ContactForm {
+    width: 70%;
+  }
+}

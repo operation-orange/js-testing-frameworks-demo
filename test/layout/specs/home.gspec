@@ -1,6 +1,6 @@
 @objects
-    mainHeader    .MainHeader__header
-    logo          [data-qa-id=main-logo]
+    mainHeader    css   .MainHeader__header
+    logo          css   .MainHeader__logo
 
 = Header =
     @on desktop
@@ -17,6 +17,5 @@
 
     @on mobile
         logo:
-            width 238px
+            inside mainHeader 20px left right top
             centered horizontally inside mainHeader
-            inside mainHeader 20px top
