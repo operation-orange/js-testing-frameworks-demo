@@ -1,5 +1,8 @@
 load('init.js');
 
-testOnAllDevices('Home page test on mobile device', '/brand=topshop', function (driver, device) {
-  checkLayout(driver, 'test/layout/suites/home.gspec', device.tags);
+forAll(devices, function () {
+  test('Home page test - device: ${deviceName}', function (device) {
+    const driver = getDriver('/?brand=topshop', device);
+    check(driver, '/home.gspec', device.tags);
+  });
 });

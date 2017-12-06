@@ -1,9 +1,0 @@
-@objects
-    mainHeader    .MainHeader__header
-    logo          [data-qa-id=main-logo]
-
-= Header =
-    logo:
-        width 238px
-        centered horizontally inside mainHeader
-        inside mainHeader 20px top

@@ -1,0 +1,20 @@
+{
+  "rules": {
+    "prefer-arrow-callback": 0,
+    "func-names": 0,
+    "prefer-template": 0,
+    "no-var": 0,
+    "no-template-curly-in-string": 0
+  },
+  "globals": {
+    "forAll": true,
+    "createDriver": true,
+    "checkLayout": true,
+    "importClass": true,
+    "load": true,
+    "session": true,
+    "devices": true,
+    "getDriver": true,
+    "check": true
+  }
+}
