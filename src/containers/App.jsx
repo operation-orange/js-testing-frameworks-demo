@@ -13,14 +13,14 @@ export const App = ({ brand }) => (
     next_brand: brand === 'Next'
   })}
   >
-    <div className="wrapper">
+    <div className="App__wrapper">
       <MainHeader brand={brand} />
       <div className="App__content">
         {routes}
       </div>
-      <div className="push" />
+      <div className="App__push" />
     </div>
-    <footer>
+    <footer className="App__footer">
       This is the footer
     </footer>
   </div>
