@@ -1,3 +1,8 @@
+html, body, #root, .App {
+  height: 100%;
+  margin: 0;
+}
+
 button, input, textarea {
   width: 100%;
   display: block;
@@ -5,4 +10,20 @@ button, input, textarea {
 
 textarea {
   min-height: 100px;
+}
+
+.wrapper {
+  min-height: 100%;
+}
+
+.push {
+  height: 50px;
+}
+
+footer {
+  padding: 0 5px;
+  line-height: 50px;
+  background-color: #333;
+  margin-top: -50px;
+  color: #FFFFFF;
 }

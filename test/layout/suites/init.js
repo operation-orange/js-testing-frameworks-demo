@@ -8,12 +8,6 @@ const devices = { // eslint-disable-line no-unused-vars
     tags: ['desktop'],
     browser: 'chrome'
   },
-  tabletChrome: {
-    deviceName: 'tablet chrome',
-    size: '959x800',
-    tags: ['tablet'],
-    browser: 'chrome'
-  },
   mobileChrome: {
     deviceName: 'mobile chrome',
     size: '459x800',
