@@ -1,11 +1,11 @@
-this.HomePage = function (driver) {
-  GalenPages.extendPage(this, driver, 'Home page', {
-    mainHeader: '.MainHeader__header',
-    logo: '.MainHeader__logo',
+this.HomePage = $page('Home page', {
+  mainContent: '.App__content',
 
-    load: function () {
-      this.open(domain + '/?brand=topshop');
-      return this.waitForIt();
-    }
-  });
-};
+  load: function () {
+    this.open(domain + '/?brand=topshop');
+    return this.waitForIt();
+  },
+  close: function () {
+    this.driver.close();
+  }
+});

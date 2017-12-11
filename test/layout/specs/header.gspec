@@ -1,14 +1,30 @@
 @objects
-    # Imported from the ./test/layout/suites/pages/home.js page object
+    mainHeader    css   .MainHeader__header
+        logo      css   .MainHeader__logo
+        title     css   .MainHeader__title
+        nav       css   .MainHeader__nav
 
-= Header =
-    @on desktop
-        logo:
-            width 238px
+= Main Header =
+    @on *
+        mainHeader:
+            inside screen 0px left right top
+
+        mainHeader.logo:
             centered horizontally inside mainHeader
             inside mainHeader 20px top
 
-    @on mobile
-        logo:
-            inside mainHeader 20px left right top
+        mainHeader.title:
             centered horizontally inside mainHeader
+            below mainHeader.logo 0px
+
+        mainHeader.nav:
+            centered horizontally inside mainHeader
+            below mainHeader.title 8px
+
+    @on desktop
+        mainHeader.logo:
+            width 238px
+
+    @on mobile
+        mainHeader.logo:
+            inside mainHeader 20px left right

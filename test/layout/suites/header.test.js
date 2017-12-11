@@ -8,11 +8,11 @@ forAll(devices, function () {
 
     checkLayout({
       driver: driver,
-      spec: specPath + '/header.gspec',
+      spec: specPath + '/home.gspec',
       tags: device.tags,
       objects: homePage.getAllLocators()
     });
 
-    driver.close();
+    homePage.close();
   });
 });

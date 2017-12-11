@@ -1,0 +1,9 @@
+@import header.gspec
+
+@objects
+    # Injected from ./test/layout/suites/pages/home.js page object
+
+= Home Page =
+    @on *
+        mainContent:
+            below mainHeader 0px
