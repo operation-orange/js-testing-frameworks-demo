@@ -1,11 +1,7 @@
-x @objects
-    mainHeader    css   .MainHeader__header
-    logo          css   .MainHeader__logo
+@objects
+    # Imported from the ./test/layout/suites/pages/home.js page object
 
 = Header =
-    @on *
-        mainHeader
-
     @on desktop
         logo:
             width 238px

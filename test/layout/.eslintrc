@@ -4,7 +4,9 @@
     "func-names": 0,
     "prefer-template": 0,
     "no-var": 0,
-    "no-template-curly-in-string": 0
+    "no-template-curly-in-string": 0,
+    "object-shorthand": 0,
+    "no-undef": 0
   },
   "globals": {
     "forAll": true,
@@ -15,6 +17,7 @@
     "session": true,
     "devices": true,
     "getDriver": true,
-    "check": true
+    "check": true,
+    "GalenPages": true
   }
 }

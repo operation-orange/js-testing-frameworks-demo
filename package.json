@@ -26,7 +26,7 @@
     "test": "react-scripts test --env=jsdom",
     "test:e2e": "protractor ./test/e2e/protractor.conf.js",
     "test:e2e:headless": "protractor ./test/e2e/protractor.conf.js --headless",
-    "test:layout": "galen test ./test/layout/suites/ --htmlreport ./testOutput/layout --config \"./test/layout/galen.config\"",
+    "test:layout": "galen test ./test/layout/suites/ --htmlreport ./testOutput/layout/report --config \"./test/layout/galen.config\"",
     "galen": "galen",
     "lint": "eslint --ext .jsx --ext .js ."
   },
