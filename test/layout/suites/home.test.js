@@ -1,18 +1,6 @@
-load('vars.js');
+load('init.js');
 load('pages/home.js');
 
-forAll(devices, function () {
-  test('Home page test - device: ${deviceName}', function (device) {
-    const driver = createDriver(domain, device.size, device.browser);
-    const homePage = new HomePage(driver).load();
-
-    checkLayout({
-      driver: driver,
-      spec: specPath + '/home.gspec',
-      tags: device.tags,
-      objects: homePage.getAllLocators()
-    });
-
-    homePage.close();
-  });
+testAllDevices('/?brand=topshop', './test/layout/specs/home.gspec', function (driver) {
+  return new HomePage(driver).waitForIt();
 });
